@@ -78,6 +78,10 @@ export async function stockIn(req, res) {
   const packingRows = parsePackingRows(body.packingRows);
 
   if (!material) return res.status(400).json({ error: "Material name is required." });
+  if (!brand) return res.status(400).json({ error: "Brand / Supplier is required." });
+  if (!batchNo) return res.status(400).json({ error: "Batch No is required." });
+  if (!mfg) return res.status(400).json({ error: "Mfg date is required." });
+  if (!exp) return res.status(400).json({ error: "Exp date is required." });
   if (!location) return res.status(400).json({ error: "Choose a location for this stock." });
   if (packingRows.length === 0) return res.status(400).json({ error: "Add at least one packing size and count." });
 
