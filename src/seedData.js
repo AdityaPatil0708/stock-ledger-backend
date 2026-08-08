@@ -1,4 +1,6 @@
 // Seed data imported from STOCK_GF_6-08-26.csv, STOCK_06-08-26.csv, STOCK_07-08-26.csv, STOCK_GF_07-08-26.csv.
+// Location codes normalized against "LOCATION WISE SHEET - Sheet1.csv" (authoritative warehouse location list).
+// NOTE: "GF B13" (2 items) has no match in the authoritative location list; left as-is, needs manual review.
 export const STOCK_DATA = [
   {
     "tally": null,
@@ -901,7 +903,7 @@ export const STOCK_DATA = [
     "in": 0,
     "out": 0,
     "opening": 170,
-    "location": "GF D 11",
+    "location": "GF D11",
     "reservation": null
   },
   {
@@ -1161,7 +1163,7 @@ export const STOCK_DATA = [
     "in": 0,
     "out": 0,
     "opening": 9.5,
-    "location": "F1B18",
+    "location": "F1 B18",
     "reservation": null
   },
   {
@@ -1178,7 +1180,7 @@ export const STOCK_DATA = [
     "in": 0,
     "out": 0,
     "opening": 120,
-    "location": "F1C10",
+    "location": "F1 C10",
     "reservation": null
   },
   {
@@ -1195,7 +1197,7 @@ export const STOCK_DATA = [
     "in": 0,
     "out": 0,
     "opening": 20,
-    "location": "F1C10",
+    "location": "F1 C10",
     "reservation": null
   },
   {
@@ -1212,7 +1214,7 @@ export const STOCK_DATA = [
     "in": 0,
     "out": 0,
     "opening": 10.4,
-    "location": "F1C10",
+    "location": "F1 C10",
     "reservation": null
   },
   {
@@ -1229,7 +1231,7 @@ export const STOCK_DATA = [
     "in": 0,
     "out": 0,
     "opening": 2.27,
-    "location": "F1C10",
+    "location": "F1 C10",
     "reservation": null
   },
   {
@@ -1246,7 +1248,7 @@ export const STOCK_DATA = [
     "in": 0,
     "out": 0,
     "opening": 0.36,
-    "location": "F1C10",
+    "location": "F1 C10",
     "reservation": null
   },
   {
@@ -1263,7 +1265,7 @@ export const STOCK_DATA = [
     "in": 0,
     "out": 0,
     "opening": 0.1,
-    "location": "F1C10",
+    "location": "F1 C10",
     "reservation": null
   },
   {
@@ -1280,7 +1282,7 @@ export const STOCK_DATA = [
     "in": 0,
     "out": 0,
     "opening": 100,
-    "location": "F1D10",
+    "location": "F1 D10",
     "reservation": null
   },
   {
@@ -1297,7 +1299,7 @@ export const STOCK_DATA = [
     "in": 0,
     "out": 0,
     "opening": 25,
-    "location": "F1D10",
+    "location": "F1 D10",
     "reservation": null
   },
   {
@@ -1314,7 +1316,7 @@ export const STOCK_DATA = [
     "in": 0,
     "out": 0,
     "opening": 8.4,
-    "location": "F1D10",
+    "location": "F1 D10",
     "reservation": null
   },
   {
@@ -1331,7 +1333,7 @@ export const STOCK_DATA = [
     "in": 0,
     "out": 0,
     "opening": 1.9,
-    "location": "F1D10",
+    "location": "F1 D10",
     "reservation": null
   },
   {
@@ -1348,7 +1350,7 @@ export const STOCK_DATA = [
     "in": 0,
     "out": 0,
     "opening": 60,
-    "location": "F1C9",
+    "location": "F1 C9",
     "reservation": null
   },
   {
@@ -1365,7 +1367,7 @@ export const STOCK_DATA = [
     "in": 0,
     "out": 0,
     "opening": 10,
-    "location": "F1C9",
+    "location": "F1 C9",
     "reservation": null
   },
   {
@@ -1382,7 +1384,7 @@ export const STOCK_DATA = [
     "in": 0,
     "out": 0,
     "opening": 4.9,
-    "location": "F1C9",
+    "location": "F1 C9",
     "reservation": null
   },
   {
@@ -1399,7 +1401,7 @@ export const STOCK_DATA = [
     "in": 0,
     "out": 0,
     "opening": 3.7,
-    "location": "F1C9",
+    "location": "F1 C9",
     "reservation": null
   },
   {
@@ -1416,7 +1418,7 @@ export const STOCK_DATA = [
     "in": 0,
     "out": 0,
     "opening": 1.8,
-    "location": "F1C9",
+    "location": "F1 C9",
     "reservation": null
   },
   {
@@ -1433,7 +1435,7 @@ export const STOCK_DATA = [
     "in": 0,
     "out": 0,
     "opening": 90,
-    "location": "F1B6",
+    "location": "F1 B6",
     "reservation": null
   },
   {
@@ -1450,7 +1452,7 @@ export const STOCK_DATA = [
     "in": 0,
     "out": 0,
     "opening": 9.85,
-    "location": "F1B6",
+    "location": "F1 B6",
     "reservation": null
   },
   {
@@ -1467,7 +1469,7 @@ export const STOCK_DATA = [
     "in": 0,
     "out": 0,
     "opening": 4.5,
-    "location": "F1B6",
+    "location": "F1 B6",
     "reservation": null
   },
   {
@@ -1484,7 +1486,7 @@ export const STOCK_DATA = [
     "in": 0,
     "out": 0,
     "opening": 0.5,
-    "location": "F1B6",
+    "location": "F1 B6",
     "reservation": null
   },
   {
@@ -1501,7 +1503,7 @@ export const STOCK_DATA = [
     "in": 0,
     "out": 0,
     "opening": 120,
-    "location": "F1B10",
+    "location": "F1 B10",
     "reservation": null
   },
   {
@@ -1518,7 +1520,7 @@ export const STOCK_DATA = [
     "in": 0,
     "out": 0,
     "opening": 1,
-    "location": "F1B10",
+    "location": "F1 B10",
     "reservation": null
   },
   {
@@ -1535,7 +1537,7 @@ export const STOCK_DATA = [
     "in": 0,
     "out": 0,
     "opening": 2.4,
-    "location": "F1B10",
+    "location": "F1 B10",
     "reservation": null
   },
   {
@@ -1552,7 +1554,7 @@ export const STOCK_DATA = [
     "in": 0,
     "out": 0,
     "opening": 4.6,
-    "location": "F1B10",
+    "location": "F1 B10",
     "reservation": null
   },
   {
@@ -1569,7 +1571,7 @@ export const STOCK_DATA = [
     "in": 0,
     "out": 0,
     "opening": 7.7,
-    "location": "F1B18",
+    "location": "F1 B18",
     "reservation": null
   },
   {
@@ -1586,7 +1588,7 @@ export const STOCK_DATA = [
     "in": 0,
     "out": 0,
     "opening": 3,
-    "location": "F1B18",
+    "location": "F1 B18",
     "reservation": null
   },
   {
@@ -1603,7 +1605,7 @@ export const STOCK_DATA = [
     "in": 0,
     "out": 0,
     "opening": 1.75,
-    "location": "F1B18",
+    "location": "F1 B18",
     "reservation": null
   },
   {
@@ -1620,7 +1622,7 @@ export const STOCK_DATA = [
     "in": 0,
     "out": 0,
     "opening": 14.95,
-    "location": "F1D25",
+    "location": "F1 D25",
     "reservation": null
   },
   {
@@ -1637,7 +1639,7 @@ export const STOCK_DATA = [
     "in": 0,
     "out": 0,
     "opening": 7.5,
-    "location": "F1D25",
+    "location": "F1 D25",
     "reservation": null
   },
   {
@@ -1654,7 +1656,7 @@ export const STOCK_DATA = [
     "in": 0,
     "out": 0,
     "opening": 50,
-    "location": "F1B5",
+    "location": "F1 B5",
     "reservation": null
   },
   {
@@ -1671,7 +1673,7 @@ export const STOCK_DATA = [
     "in": 0,
     "out": 0,
     "opening": 7.3,
-    "location": "F1B5",
+    "location": "F1 B5",
     "reservation": null
   },
   {
@@ -1688,7 +1690,7 @@ export const STOCK_DATA = [
     "in": 0,
     "out": 0,
     "opening": 2.3,
-    "location": "F1D5",
+    "location": "F1 D5",
     "reservation": null
   },
   {
@@ -1705,7 +1707,7 @@ export const STOCK_DATA = [
     "in": 0,
     "out": 0,
     "opening": 2.28,
-    "location": "F1D13",
+    "location": "F1 D13",
     "reservation": null
   },
   {
@@ -1722,7 +1724,7 @@ export const STOCK_DATA = [
     "in": 0,
     "out": 0,
     "opening": 7.7,
-    "location": "F1D13",
+    "location": "F1 D13",
     "reservation": null
   },
   {
@@ -1739,7 +1741,7 @@ export const STOCK_DATA = [
     "in": 0,
     "out": 0,
     "opening": 120,
-    "location": "F1B18",
+    "location": "F1 B18",
     "reservation": null
   },
   {
@@ -1756,7 +1758,7 @@ export const STOCK_DATA = [
     "in": 0,
     "out": 0,
     "opening": 120,
-    "location": "F1C13",
+    "location": "F1 C13",
     "reservation": null
   },
   {
@@ -1773,7 +1775,7 @@ export const STOCK_DATA = [
     "in": 0,
     "out": 0,
     "opening": 25.16,
-    "location": "F1C13",
+    "location": "F1 C13",
     "reservation": null
   },
   {
@@ -1790,7 +1792,7 @@ export const STOCK_DATA = [
     "in": 0,
     "out": 0,
     "opening": 2.5,
-    "location": "F1C13",
+    "location": "F1 C13",
     "reservation": null
   },
   {
@@ -1807,7 +1809,7 @@ export const STOCK_DATA = [
     "in": 0,
     "out": 0,
     "opening": 5,
-    "location": "F1C13",
+    "location": "F1 C13",
     "reservation": null
   },
   {
@@ -1824,7 +1826,7 @@ export const STOCK_DATA = [
     "in": 0,
     "out": 0,
     "opening": 9.65,
-    "location": "F1C13",
+    "location": "F1 C13",
     "reservation": null
   },
   {
@@ -1841,7 +1843,7 @@ export const STOCK_DATA = [
     "in": 0,
     "out": 0,
     "opening": 2.3,
-    "location": "F1D5",
+    "location": "F1 D5",
     "reservation": null
   },
   {
@@ -1858,7 +1860,7 @@ export const STOCK_DATA = [
     "in": 0,
     "out": 0,
     "opening": 25,
-    "location": "F1D19",
+    "location": "F1 D19",
     "reservation": null
   },
   {
@@ -1875,7 +1877,7 @@ export const STOCK_DATA = [
     "in": 0,
     "out": 0,
     "opening": 25,
-    "location": "F1D19",
+    "location": "F1 D19",
     "reservation": null
   },
   {
@@ -1892,7 +1894,7 @@ export const STOCK_DATA = [
     "in": 0,
     "out": 0,
     "opening": 25,
-    "location": "F1D19",
+    "location": "F1 D19",
     "reservation": null
   },
   {
@@ -1909,7 +1911,7 @@ export const STOCK_DATA = [
     "in": 0,
     "out": 0,
     "opening": 90,
-    "location": "F1B10",
+    "location": "F1 B10",
     "reservation": null
   },
   {
@@ -1926,7 +1928,7 @@ export const STOCK_DATA = [
     "in": 0,
     "out": 0,
     "opening": 4.6,
-    "location": "F1B10",
+    "location": "F1 B10",
     "reservation": null
   },
   {
@@ -1943,7 +1945,7 @@ export const STOCK_DATA = [
     "in": 0,
     "out": 0,
     "opening": 11.2,
-    "location": "F1B10",
+    "location": "F1 B10",
     "reservation": null
   },
   {
@@ -1960,7 +1962,7 @@ export const STOCK_DATA = [
     "in": 0,
     "out": 0,
     "opening": 3.3,
-    "location": "F1B10",
+    "location": "F1 B10",
     "reservation": null
   },
   {
@@ -1977,7 +1979,7 @@ export const STOCK_DATA = [
     "in": 0,
     "out": 0,
     "opening": 7.7,
-    "location": "F1B10",
+    "location": "F1 B10",
     "reservation": null
   },
   {
@@ -1994,7 +1996,7 @@ export const STOCK_DATA = [
     "in": 0,
     "out": 0,
     "opening": 2.6,
-    "location": "F1B10",
+    "location": "F1 B10",
     "reservation": null
   },
   {
@@ -2011,7 +2013,7 @@ export const STOCK_DATA = [
     "in": 0,
     "out": 0,
     "opening": 7,
-    "location": "F1B10",
+    "location": "F1 B10",
     "reservation": null
   },
   {
@@ -2028,7 +2030,7 @@ export const STOCK_DATA = [
     "in": 0,
     "out": 0,
     "opening": 2,
-    "location": "F1B10",
+    "location": "F1 B10",
     "reservation": null
   },
   {
@@ -2045,7 +2047,7 @@ export const STOCK_DATA = [
     "in": 0,
     "out": 0,
     "opening": 1,
-    "location": "F1B10",
+    "location": "F1 B10",
     "reservation": null
   },
   {
@@ -2062,7 +2064,7 @@ export const STOCK_DATA = [
     "in": 0,
     "out": 0,
     "opening": 6,
-    "location": "F1B10",
+    "location": "F1 B10",
     "reservation": null
   },
   {
@@ -2079,7 +2081,7 @@ export const STOCK_DATA = [
     "in": 0,
     "out": 0,
     "opening": 60,
-    "location": "F1C9",
+    "location": "F1 C9",
     "reservation": null
   },
   {
@@ -2096,7 +2098,7 @@ export const STOCK_DATA = [
     "in": 0,
     "out": 0,
     "opening": 10,
-    "location": "F1C9",
+    "location": "F1 C9",
     "reservation": null
   },
   {
@@ -2113,7 +2115,7 @@ export const STOCK_DATA = [
     "in": 0,
     "out": 0,
     "opening": 3.65,
-    "location": "F1C9",
+    "location": "F1 C9",
     "reservation": null
   },
   {
@@ -2130,7 +2132,7 @@ export const STOCK_DATA = [
     "in": 0,
     "out": 0,
     "opening": 2.95,
-    "location": "F1C9",
+    "location": "F1 C9",
     "reservation": null
   },
   {
@@ -2147,7 +2149,7 @@ export const STOCK_DATA = [
     "in": 0,
     "out": 0,
     "opening": 4.9,
-    "location": "F1C9",
+    "location": "F1 C9",
     "reservation": null
   },
   {
@@ -2164,7 +2166,7 @@ export const STOCK_DATA = [
     "in": 0,
     "out": 0,
     "opening": 1.8,
-    "location": "F1C9",
+    "location": "F1 C9",
     "reservation": null
   },
   {
@@ -2181,7 +2183,7 @@ export const STOCK_DATA = [
     "in": 0,
     "out": 0,
     "opening": 75,
-    "location": "F1A23",
+    "location": "F1 A23",
     "reservation": null
   },
   {
@@ -2198,7 +2200,7 @@ export const STOCK_DATA = [
     "in": 0,
     "out": 0,
     "opening": 30,
-    "location": "F1D9",
+    "location": "F1 D9",
     "reservation": null
   },
   {
@@ -2215,7 +2217,7 @@ export const STOCK_DATA = [
     "in": 0,
     "out": 0,
     "opening": 4.99,
-    "location": "F1D9",
+    "location": "F1 D9",
     "reservation": null
   },
   {
@@ -2232,7 +2234,7 @@ export const STOCK_DATA = [
     "in": 0,
     "out": 0,
     "opening": 25,
-    "location": "F1A22",
+    "location": "F1 A22",
     "reservation": null
   },
   {
@@ -2249,7 +2251,7 @@ export const STOCK_DATA = [
     "in": 0,
     "out": 0,
     "opening": 30,
-    "location": "F1B5",
+    "location": "F1 B5",
     "reservation": null
   },
   {
@@ -2266,7 +2268,7 @@ export const STOCK_DATA = [
     "in": 0,
     "out": 0,
     "opening": 2.3,
-    "location": "F1B5",
+    "location": "F1 B5",
     "reservation": null
   },
   {
@@ -2283,7 +2285,7 @@ export const STOCK_DATA = [
     "in": 0,
     "out": 0,
     "opening": 4.3,
-    "location": "F1B5",
+    "location": "F1 B5",
     "reservation": null
   },
   {
@@ -2300,7 +2302,7 @@ export const STOCK_DATA = [
     "in": 0,
     "out": 0,
     "opening": 150,
-    "location": "F1D17",
+    "location": "F1 D17",
     "reservation": null
   },
   {
@@ -2317,7 +2319,7 @@ export const STOCK_DATA = [
     "in": 0,
     "out": 0,
     "opening": 16.4,
-    "location": "F1D17",
+    "location": "F1 D17",
     "reservation": null
   },
   {
@@ -2334,7 +2336,7 @@ export const STOCK_DATA = [
     "in": 0,
     "out": 0,
     "opening": 90,
-    "location": "F1A22",
+    "location": "F1 A22",
     "reservation": null
   },
   {
@@ -2351,7 +2353,7 @@ export const STOCK_DATA = [
     "in": 0,
     "out": 0,
     "opening": 25,
-    "location": "F1A22",
+    "location": "F1 A22",
     "reservation": null
   },
   {
@@ -2368,7 +2370,7 @@ export const STOCK_DATA = [
     "in": 0,
     "out": 0,
     "opening": 30,
-    "location": "F1A22",
+    "location": "F1 A22",
     "reservation": null
   },
   {
@@ -2385,7 +2387,7 @@ export const STOCK_DATA = [
     "in": 0,
     "out": 0,
     "opening": 19.6,
-    "location": "F1A22",
+    "location": "F1 A22",
     "reservation": null
   },
   {
@@ -2402,7 +2404,7 @@ export const STOCK_DATA = [
     "in": 0,
     "out": 0,
     "opening": 5,
-    "location": "F1A22",
+    "location": "F1 A22",
     "reservation": null
   },
   {
@@ -2419,7 +2421,7 @@ export const STOCK_DATA = [
     "in": 0,
     "out": 0,
     "opening": 12.9,
-    "location": "F1A22",
+    "location": "F1 A22",
     "reservation": null
   },
   {
@@ -2436,7 +2438,7 @@ export const STOCK_DATA = [
     "in": 0,
     "out": 0,
     "opening": 4.95,
-    "location": "F1D25",
+    "location": "F1 D25",
     "reservation": null
   },
   {
@@ -2453,7 +2455,7 @@ export const STOCK_DATA = [
     "in": 0,
     "out": 0,
     "opening": 18.95,
-    "location": "F1D25",
+    "location": "F1 D25",
     "reservation": null
   },
   {
@@ -2470,7 +2472,7 @@ export const STOCK_DATA = [
     "in": 0,
     "out": 0,
     "opening": 30,
-    "location": "F1D25",
+    "location": "F1 D25",
     "reservation": null
   },
   {
@@ -2487,7 +2489,7 @@ export const STOCK_DATA = [
     "in": 0,
     "out": 0,
     "opening": 1.2,
-    "location": "F1D25",
+    "location": "F1 D25",
     "reservation": null
   },
   {
@@ -2504,7 +2506,7 @@ export const STOCK_DATA = [
     "in": 0,
     "out": 0,
     "opening": 100,
-    "location": "F1D22",
+    "location": "F1 D22",
     "reservation": null
   },
   {
@@ -2521,7 +2523,7 @@ export const STOCK_DATA = [
     "in": 0,
     "out": 0,
     "opening": 25,
-    "location": "F1D22",
+    "location": "F1 D22",
     "reservation": null
   },
   {
@@ -2538,7 +2540,7 @@ export const STOCK_DATA = [
     "in": 0,
     "out": 0,
     "opening": 14.2,
-    "location": "F1D22",
+    "location": "F1 D22",
     "reservation": null
   },
   {
@@ -2555,7 +2557,7 @@ export const STOCK_DATA = [
     "in": 0,
     "out": 0,
     "opening": 25,
-    "location": "F1D22",
+    "location": "F1 D22",
     "reservation": null
   },
   {
@@ -2572,7 +2574,7 @@ export const STOCK_DATA = [
     "in": 0,
     "out": 0,
     "opening": 90,
-    "location": "F1C14",
+    "location": "F1 C14",
     "reservation": null
   },
   {
@@ -2589,7 +2591,7 @@ export const STOCK_DATA = [
     "in": 0,
     "out": 0,
     "opening": 18.1,
-    "location": "F1C14",
+    "location": "F1 C14",
     "reservation": null
   },
   {
@@ -2606,7 +2608,7 @@ export const STOCK_DATA = [
     "in": 0,
     "out": 0,
     "opening": 9.6,
-    "location": "F1C14",
+    "location": "F1 C14",
     "reservation": null
   },
   {
@@ -2623,7 +2625,7 @@ export const STOCK_DATA = [
     "in": 0,
     "out": 0,
     "opening": 9.98,
-    "location": "F1C14",
+    "location": "F1 C14",
     "reservation": null
   },
   {
@@ -2640,7 +2642,7 @@ export const STOCK_DATA = [
     "in": 0,
     "out": 0,
     "opening": 300,
-    "location": "F1D27",
+    "location": "F1 D27",
     "reservation": null
   },
   {
@@ -2657,7 +2659,7 @@ export const STOCK_DATA = [
     "in": 0,
     "out": 0,
     "opening": 175,
-    "location": "F1D27",
+    "location": "F1 D27",
     "reservation": null
   },
   {
@@ -2674,7 +2676,7 @@ export const STOCK_DATA = [
     "in": 0,
     "out": 0,
     "opening": 9.6,
-    "location": "F1D27",
+    "location": "F1 D27",
     "reservation": null
   },
   {
@@ -2691,7 +2693,7 @@ export const STOCK_DATA = [
     "in": 0,
     "out": 0,
     "opening": 150,
-    "location": "F1D23",
+    "location": "F1 D23",
     "reservation": null
   },
   {
@@ -2708,7 +2710,7 @@ export const STOCK_DATA = [
     "in": 0,
     "out": 0,
     "opening": 10,
-    "location": "F1D23",
+    "location": "F1 D23",
     "reservation": null
   },
   {
@@ -2725,7 +2727,7 @@ export const STOCK_DATA = [
     "in": 0,
     "out": 0,
     "opening": 50,
-    "location": "F1D23",
+    "location": "F1 D23",
     "reservation": null
   },
   {
@@ -2742,7 +2744,7 @@ export const STOCK_DATA = [
     "in": 0,
     "out": 0,
     "opening": 20,
-    "location": "F1C10",
+    "location": "F1 C10",
     "reservation": null
   },
   {
@@ -2759,7 +2761,7 @@ export const STOCK_DATA = [
     "in": 0,
     "out": 0,
     "opening": 11.9,
-    "location": "F1C10",
+    "location": "F1 C10",
     "reservation": null
   },
   {
@@ -2776,7 +2778,7 @@ export const STOCK_DATA = [
     "in": 0,
     "out": 0,
     "opening": 1.95,
-    "location": "F1C10",
+    "location": "F1 C10",
     "reservation": null
   },
   {
@@ -2793,7 +2795,7 @@ export const STOCK_DATA = [
     "in": 0,
     "out": 0,
     "opening": 60,
-    "location": "F1D21",
+    "location": "F1 D21",
     "reservation": null
   },
   {
@@ -2810,7 +2812,7 @@ export const STOCK_DATA = [
     "in": 0,
     "out": 0,
     "opening": 6,
-    "location": "F1D21",
+    "location": "F1 D21",
     "reservation": null
   },
   {
@@ -2827,7 +2829,7 @@ export const STOCK_DATA = [
     "in": 0,
     "out": 0,
     "opening": 0.3,
-    "location": "F1D21",
+    "location": "F1 D21",
     "reservation": null
   },
   {
@@ -2844,7 +2846,7 @@ export const STOCK_DATA = [
     "in": 0,
     "out": 0,
     "opening": 2.38,
-    "location": "F1D21",
+    "location": "F1 D21",
     "reservation": null
   },
   {
@@ -2861,7 +2863,7 @@ export const STOCK_DATA = [
     "in": 0,
     "out": 0,
     "opening": 2.5,
-    "location": "F1D21",
+    "location": "F1 D21",
     "reservation": null
   },
   {
@@ -2878,7 +2880,7 @@ export const STOCK_DATA = [
     "in": 0,
     "out": 0,
     "opening": 70,
-    "location": "F1A17",
+    "location": "F1 A17",
     "reservation": null
   },
   {
@@ -2895,7 +2897,7 @@ export const STOCK_DATA = [
     "in": 0,
     "out": 0,
     "opening": 6.4,
-    "location": "F1A17",
+    "location": "F1 A17",
     "reservation": null
   },
   {
@@ -2912,7 +2914,7 @@ export const STOCK_DATA = [
     "in": 0,
     "out": 0,
     "opening": 33.2,
-    "location": "F1D17",
+    "location": "F1 D17",
     "reservation": null
   },
   {
@@ -2929,7 +2931,7 @@ export const STOCK_DATA = [
     "in": 0,
     "out": 0,
     "opening": 150,
-    "location": "F1D17",
+    "location": "F1 D17",
     "reservation": null
   },
   {
@@ -2946,7 +2948,7 @@ export const STOCK_DATA = [
     "in": 0,
     "out": 0,
     "opening": 7.67,
-    "location": "F1D17",
+    "location": "F1 D17",
     "reservation": null
   },
   {
@@ -2963,7 +2965,7 @@ export const STOCK_DATA = [
     "in": 0,
     "out": 0,
     "opening": 3.15,
-    "location": "F1D17",
+    "location": "F1 D17",
     "reservation": null
   },
   {
@@ -2980,7 +2982,7 @@ export const STOCK_DATA = [
     "in": 0,
     "out": 0,
     "opening": 100,
-    "location": "F1B2",
+    "location": "F1 B2",
     "reservation": null
   },
   {
@@ -2997,7 +2999,7 @@ export const STOCK_DATA = [
     "in": 0,
     "out": 0,
     "opening": 25,
-    "location": "F1B2",
+    "location": "F1 B2",
     "reservation": null
   },
   {
@@ -3014,7 +3016,7 @@ export const STOCK_DATA = [
     "in": 0,
     "out": 0,
     "opening": 25,
-    "location": "F1B2",
+    "location": "F1 B2",
     "reservation": null
   },
   {
@@ -3031,7 +3033,7 @@ export const STOCK_DATA = [
     "in": 0,
     "out": 0,
     "opening": 50,
-    "location": "F1B2",
+    "location": "F1 B2",
     "reservation": null
   },
   {
@@ -3048,7 +3050,7 @@ export const STOCK_DATA = [
     "in": 0,
     "out": 0,
     "opening": 100,
-    "location": "F1B2",
+    "location": "F1 B2",
     "reservation": null
   },
   {
@@ -3065,7 +3067,7 @@ export const STOCK_DATA = [
     "in": 0,
     "out": 0,
     "opening": 100,
-    "location": "F1B2",
+    "location": "F1 B2",
     "reservation": null
   },
   {
@@ -3082,7 +3084,7 @@ export const STOCK_DATA = [
     "in": 0,
     "out": 0,
     "opening": 375,
-    "location": "F1A11",
+    "location": "F1 A11",
     "reservation": null
   },
   {
@@ -3099,7 +3101,7 @@ export const STOCK_DATA = [
     "in": 0,
     "out": 0,
     "opening": 24.75,
-    "location": "F1A11",
+    "location": "F1 A11",
     "reservation": null
   },
   {
@@ -3116,7 +3118,7 @@ export const STOCK_DATA = [
     "in": 0,
     "out": 0,
     "opening": 30,
-    "location": "F1D21",
+    "location": "F1 D21",
     "reservation": null
   },
   {
@@ -3133,7 +3135,7 @@ export const STOCK_DATA = [
     "in": 0,
     "out": 0,
     "opening": 12.59,
-    "location": "F1D21",
+    "location": "F1 D21",
     "reservation": null
   },
   {
@@ -3150,7 +3152,7 @@ export const STOCK_DATA = [
     "in": 0,
     "out": 0,
     "opening": 3.98,
-    "location": "F1D21",
+    "location": "F1 D21",
     "reservation": null
   },
   {
@@ -3167,7 +3169,7 @@ export const STOCK_DATA = [
     "in": 0,
     "out": 0,
     "opening": 9.81,
-    "location": "F1D21",
+    "location": "F1 D21",
     "reservation": null
   },
   {
@@ -3184,7 +3186,7 @@ export const STOCK_DATA = [
     "in": 0,
     "out": 0,
     "opening": 1.46,
-    "location": "F1D21",
+    "location": "F1 D21",
     "reservation": null
   },
   {
@@ -3201,7 +3203,7 @@ export const STOCK_DATA = [
     "in": 0,
     "out": 0,
     "opening": 29.45,
-    "location": "F1A1",
+    "location": "F1 A1",
     "reservation": null
   },
   {
@@ -3218,7 +3220,7 @@ export const STOCK_DATA = [
     "in": 0,
     "out": 0,
     "opening": 30,
-    "location": "F1A1",
+    "location": "F1 A1",
     "reservation": null
   },
   {
@@ -3235,7 +3237,7 @@ export const STOCK_DATA = [
     "in": 0,
     "out": 0,
     "opening": 90,
-    "location": "F1A1",
+    "location": "F1 A1",
     "reservation": null
   },
   {
@@ -3252,7 +3254,7 @@ export const STOCK_DATA = [
     "in": 0,
     "out": 0,
     "opening": 14.59,
-    "location": "F1A1",
+    "location": "F1 A1",
     "reservation": null
   },
   {
@@ -3495,7 +3497,7 @@ export const STOCK_DATA = [
     "in": 0,
     "out": 0,
     "opening": 180,
-    "location": "GF B 7",
+    "location": "GF B7",
     "reservation": null
   },
   {
@@ -4430,7 +4432,7 @@ export const STOCK_DATA = [
     "in": 0,
     "out": 0,
     "opening": 425,
-    "location": "GROUND",
+    "location": "GF OPEN",
     "reservation": null
   },
   {
@@ -4447,7 +4449,7 @@ export const STOCK_DATA = [
     "in": 0,
     "out": 0,
     "opening": 500,
-    "location": "GROUND",
+    "location": "GF OPEN",
     "reservation": null
   },
   {
@@ -4464,7 +4466,7 @@ export const STOCK_DATA = [
     "in": 0,
     "out": 0,
     "opening": 480,
-    "location": "GROUND",
+    "location": "GF OPEN",
     "reservation": null
   },
   {
@@ -4481,7 +4483,7 @@ export const STOCK_DATA = [
     "in": 0,
     "out": 0,
     "opening": 900,
-    "location": "GROUND",
+    "location": "GF OPEN",
     "reservation": {
       "type": [
         "RESERVED"
@@ -4503,7 +4505,7 @@ export const STOCK_DATA = [
     "in": 0,
     "out": 0,
     "opening": 225,
-    "location": "GROUND",
+    "location": "GF OPEN",
     "reservation": null
   },
   {
@@ -4520,7 +4522,7 @@ export const STOCK_DATA = [
     "in": 0,
     "out": 0,
     "opening": 225,
-    "location": "GROUND",
+    "location": "GF OPEN",
     "reservation": null
   },
   {
@@ -4707,7 +4709,7 @@ export const STOCK_DATA = [
     "in": 0,
     "out": 0,
     "opening": 147,
-    "location": "GF 10",
+    "location": "GF A10",
     "reservation": null
   },
   {
@@ -4917,41 +4919,17 @@ export const STOCK_DATA = [
 ];
 
 export const INITIAL_LOCATIONS = [
-  "F1A1",
-  "F1A11",
-  "F1A17",
-  "F1A22",
-  "F1A23",
-  "F1B10",
-  "F1B18",
-  "F1B2",
-  "F1B5",
-  "F1B6",
-  "F1C10",
-  "F1C13",
-  "F1C14",
-  "F1C9",
-  "F1D10",
-  "F1D13",
-  "F1D17",
-  "F1D19",
-  "F1D21",
-  "F1D22",
-  "F1D23",
-  "F1D25",
-  "F1D27",
-  "F1D5",
-  "F1D9",
-  "GF 10",
-  "GF A10",
+  "GF A1",
+  "GF A2",
   "GF A3",
+  "GF A4",
   "GF A5",
   "GF A6",
+  "GF A7",
+  "GF A8",
   "GF A9",
-  "GF B 7",
+  "GF A10",
   "GF B1",
-  "GF B10",
-  "GF B13",
   "GF B2",
   "GF B3",
   "GF B4",
@@ -4960,21 +4938,18 @@ export const INITIAL_LOCATIONS = [
   "GF B7",
   "GF B8",
   "GF B9",
+  "GF B10",
   "GF C1",
-  "GF C10",
   "GF C2",
   "GF C3",
   "GF C4",
   "GF C5",
+  "GF C6",
   "GF C7",
   "GF C8",
   "GF C9",
-  "GF D 11",
+  "GF C10",
   "GF D1",
-  "GF D11",
-  "GF D12",
-  "GF D13",
-  "GF D14",
   "GF D2",
   "GF D3",
   "GF D4",
@@ -4983,5 +4958,122 @@ export const INITIAL_LOCATIONS = [
   "GF D7",
   "GF D8",
   "GF D9",
-  "GROUND"
+  "GF D10",
+  "GF D11",
+  "GF D12",
+  "GF D13",
+  "GF D14",
+  "GF OPEN",
+  "F1 A1",
+  "F1 A2",
+  "F1 A3",
+  "F1 A4",
+  "F1 A5",
+  "F1 A6",
+  "F1 A7",
+  "F1 A8",
+  "F1 A9",
+  "F1 A10",
+  "F1 A11",
+  "F1 A12",
+  "F1 A13",
+  "F1 A14",
+  "F1 A15",
+  "F1 A16",
+  "F1 A17",
+  "F1 A18",
+  "F1 A19",
+  "F1 A20",
+  "F1 A21",
+  "F1 A22",
+  "F1 A23",
+  "F1 A24",
+  "F1 A25",
+  "F1 A26",
+  "F1 A27",
+  "F1 A28",
+  "F1 B1",
+  "F1 B2",
+  "F1 B3",
+  "F1 B4",
+  "F1 B5",
+  "F1 B6",
+  "F1 B7",
+  "F1 B8",
+  "F1 B9",
+  "F1 B10",
+  "F1 B11",
+  "F1 B12",
+  "F1 B13",
+  "F1 B14",
+  "F1 B15",
+  "F1 B16",
+  "F1 B17",
+  "F1 B18",
+  "F1 B19",
+  "F1 B20",
+  "F1 B21",
+  "F1 B22",
+  "F1 B23",
+  "F1 B24",
+  "F1 C1",
+  "F1 C2",
+  "F1 C3",
+  "F1 C4",
+  "F1 C5",
+  "F1 C6",
+  "F1 C7",
+  "F1 C8",
+  "F1 C9",
+  "F1 C10",
+  "F1 C11",
+  "F1 C12",
+  "F1 C13",
+  "F1 C14",
+  "F1 C15",
+  "F1 C16",
+  "F1 C17",
+  "F1 C18",
+  "F1 C19",
+  "F1 C20",
+  "F1 D1",
+  "F1 D2",
+  "F1 D3",
+  "F1 D4",
+  "F1 D5",
+  "F1 D6",
+  "F1 D7",
+  "F1 D8",
+  "F1 D9",
+  "F1 D10",
+  "F1 D11",
+  "F1 D12",
+  "F1 D13",
+  "F1 D14",
+  "F1 D15",
+  "F1 D16",
+  "F1 D17",
+  "F1 D18",
+  "F1 D19",
+  "F1 D20",
+  "F1 D21",
+  "F1 D22",
+  "F1 D23",
+  "F1 D24",
+  "F1 D25",
+  "F1 D26",
+  "F1 D27",
+  "F1 D28",
+  "F1 D29",
+  "F1 D30",
+  "F1 D31",
+  "F2 A1",
+  "F2 A2",
+  "F2 A3",
+  "F2 A4",
+  "F2 A5",
+  "F2 A6",
+  "F2 A7",
+  "F2 A8",
+  "F2 OPEN"
 ];
