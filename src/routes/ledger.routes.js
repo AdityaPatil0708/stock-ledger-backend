@@ -2,7 +2,6 @@ import { Router } from "express";
 import { authenticate, requireRole } from "../middleware/auth.js";
 import {
   getLedger,
-  resetLedger,
   undo,
   stockIn,
   stockOut,
@@ -19,7 +18,6 @@ const editorOnly = requireRole("editor");
 router.use(authenticate);
 
 router.get("/", getLedger);
-router.post("/reset", editorOnly, resetLedger);
 router.post("/undo", editorOnly, undo);
 router.post("/in", editorOnly, stockIn);
 router.post("/items/:id/out", editorOnly, stockOut);

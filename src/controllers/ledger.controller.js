@@ -1,7 +1,6 @@
 import StockItem from "../models/StockItem.js";
 import Location from "../models/Location.js";
 import TxLog from "../models/TxLog.js";
-import { STOCK_DATA, INITIAL_LOCATIONS } from "../seedData.js";
 import { round3, packingDetailFor, packingTotal, parsePackingRows } from "../lib/ledgerUtils.js";
 
 // ponytail: undo history lives in process memory (matches the original client-only undo
@@ -44,14 +43,6 @@ export async function getLedger(req, res) {
     TxLog.find().sort({ _id: -1 }),
   ]);
   res.json({ items, locations, txLog, canUndo: history.length > 0 });
-}
-
-export async function resetLedger(req, res) {
-  await pushHistory();
-  await Promise.all([StockItem.deleteMany({}), Location.deleteMany({}), TxLog.deleteMany({})]);
-  await StockItem.insertMany(STOCK_DATA);
-  await Location.insertMany(INITIAL_LOCATIONS.map((code) => ({ code })));
-  res.json({ ok: true });
 }
 
 export async function undo(req, res) {
