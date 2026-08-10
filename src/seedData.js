@@ -1,6 +1,7 @@
 // Seed data imported from STOCK_GF_6-08-26.csv, STOCK_06-08-26.csv, STOCK_07-08-26.csv, STOCK_GF_07-08-26.csv.
 // Location codes normalized against "LOCATION WISE SHEET - Sheet1.csv" (authoritative warehouse location list).
 // NOTE: "GF B13" (2 items) has no match in the authoritative location list; left as-is, needs manual review.
+// Appended from STOCK LOCATION - 08.08.2026.csv (raw append, includes rows overlapping earlier F1 batches).
 export const STOCK_DATA = [
   {
     "tally": null,
@@ -4916,7 +4917,6 @@ export const STOCK_DATA = [
     "location": "GF B7",
     "reservation": null
   },
-// Appended from STOCK LOCATION - 08.08.2026.csv (raw append, includes rows overlapping earlier F1 batches).
   {
     "tally": null,
     "material": "BENZYL ALCOHOL",
