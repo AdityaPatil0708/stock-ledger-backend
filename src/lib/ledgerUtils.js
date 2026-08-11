@@ -24,3 +24,16 @@ export function packingDetailFor(rows) {
 export function packingTotal(rows) {
   return round3(rows.reduce((s, r) => s + r.size * r.count, 0));
 }
+
+const SEARCH_FIELDS = ["material", "brand", "batchNo", "tally", "location", "article", "packingDetail", "packing"];
+
+export function stockSearchFilter(search) {
+  const q = (search || "").trim();
+  if (!q) return {};
+  const escaped = q.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+  return {
+    $or: SEARCH_FIELDS.map((f) => ({
+      $expr: { $regexMatch: { input: { $toString: { $ifNull: [`$${f}`, ""] } }, regex: escaped, options: "i" } },
+    })),
+  };
+}

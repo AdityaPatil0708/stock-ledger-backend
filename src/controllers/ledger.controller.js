@@ -1,7 +1,7 @@
 import StockItem from "../models/StockItem.js";
 import Location from "../models/Location.js";
 import TxLog from "../models/TxLog.js";
-import { round3, packingDetailFor, packingTotal, parsePackingRows } from "../lib/ledgerUtils.js";
+import { round3, packingDetailFor, packingTotal, parsePackingRows, stockSearchFilter } from "../lib/ledgerUtils.js";
 
 // ponytail: undo history lives in process memory (matches the original client-only undo
 // stack); it resets on server restart and isn't shared across processes. Upgrade to a
@@ -38,7 +38,7 @@ async function logTx(entry) {
 
 export async function getLedger(req, res) {
   const [items, locations, txLog] = await Promise.all([
-    StockItem.find().sort({ material: 1 }),
+    StockItem.find(stockSearchFilter(req.query.search)).sort({ material: 1 }),
     Location.find().sort({ code: 1 }),
     TxLog.find().sort({ _id: -1 }),
   ]);
