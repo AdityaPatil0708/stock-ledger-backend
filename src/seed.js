@@ -6,7 +6,16 @@ import { STOCK_DATA, INITIAL_LOCATIONS } from "./seedData.js";
 
 async function main() {
   await connectDB();
-  await Promise.all([StockItem.deleteMany({}), Location.deleteMany({})]);
+
+  const existingCount = await StockItem.countDocuments();
+  if (existingCount > 0) {
+    console.error(
+      `Refusing to seed: StockItem collection already has ${existingCount} documents (including any manual /in additions). ` +
+        `Seeding would delete them. Run against an empty database only.`
+    );
+    process.exit(1);
+  }
+
   await StockItem.insertMany(STOCK_DATA);
   await Location.insertMany(INITIAL_LOCATIONS.map((code) => ({ code })));
   console.log(`Seeded ${STOCK_DATA.length} stock items and ${INITIAL_LOCATIONS.length} locations.`);
