@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "nodemon src/server.js",
     "start": "node src/server.js",
-    "seed": "node src/seed.js",
+    "import-stock": "node src/importStock.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
