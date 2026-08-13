@@ -4,7 +4,7 @@ const txLogSchema = new mongoose.Schema({
   ts: { type: String, required: true },
   type: {
     type: String,
-    enum: ["IN", "OUT", "TRANSFER", "EDIT", "DELETE", "RESERVE", "UNRESERVE"],
+    enum: ["IN", "OUT", "TRANSFER", "EDIT", "DELETE", "RESERVE", "UNRESERVE", "PRODUCE"],
     required: true,
   },
   material: { type: mongoose.Schema.Types.Mixed, default: null },
@@ -16,6 +16,8 @@ const txLogSchema = new mongoose.Schema({
   packingDetail: { type: String, default: null },
   qty: { type: Number, default: 0 },
   resType: { type: String, default: null },
+  note: { type: String, default: null },
+  recipe: { type: String, default: null },
   byUser: { type: String, default: null },
 });
 

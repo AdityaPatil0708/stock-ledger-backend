@@ -114,6 +114,102 @@ export async function stockIn(req, res) {
   res.status(201).json({ item: newItem });
 }
 
+export async function produceCompound(req, res) {
+  const body = req.body || {};
+  const outputMaterial = (body.outputMaterial || "").trim();
+  const outputBrand = (body.outputBrand || "").trim();
+  const outputBatchNo = (body.outputBatchNo || "").trim();
+  const outputMfg = (body.outputMfg || "").trim();
+  const outputExp = (body.outputExp || "").trim();
+  const outputLocation = (body.outputLocation || "").trim();
+  const ingredients = (Array.isArray(body.ingredients) ? body.ingredients : [])
+    .map((r) => ({ itemId: String(r.itemId || ""), qty: parseFloat(r.qty) }))
+    .filter((r) => r.itemId && !isNaN(r.qty) && r.qty > 0);
+
+  if (!outputMaterial) return res.status(400).json({ error: "Output compound name is required." });
+  if (!outputLocation) return res.status(400).json({ error: "Choose a bin for the finished compound." });
+  if (ingredients.length === 0) return res.status(400).json({ error: "Add at least one ingredient with a quantity to consume." });
+
+  const neededByItem = new Map();
+  ingredients.forEach((r) => neededByItem.set(r.itemId, (neededByItem.get(r.itemId) || 0) + r.qty));
+
+  const sources = new Map();
+  for (const [itemId, needed] of neededByItem.entries()) {
+    const src = await StockItem.findById(itemId);
+    if (!src) return res.status(400).json({ error: "One of the selected ingredient lots no longer exists." });
+    const available = Number(src.totalStock) || 0;
+    if (needed > available + 0.0005) {
+      return res.status(400).json({
+        error: `Not enough stock of ${src.material} (${available} kg available, ${needed} kg requested).`,
+      });
+    }
+    sources.set(itemId, src);
+  }
+
+  await pushHistory();
+  await registerLocationIfNew(outputLocation);
+
+  const recipeParts = [];
+  for (const [itemId, needed] of neededByItem.entries()) {
+    const src = sources.get(itemId);
+    const before = Number(src.totalStock) || 0;
+    const remaining = before - needed;
+    const srcLoc = src.location;
+    src.totalStock = remaining > 0 ? round3(remaining) : 0;
+    src.out = (Number(src.out) || 0) + needed;
+    if (src.totalStock <= 0) src.location = null;
+    await src.save();
+
+    recipeParts.push(`${src.material} ${needed} kg${src.brand ? ` (${src.brand})` : ""}${srcLoc ? ` from ${srcLoc}` : ""}`);
+
+    await logTx({
+      ts: new Date().toISOString(),
+      type: "OUT",
+      material: src.material,
+      brand: src.brand,
+      batchNo: src.batchNo,
+      location: srcLoc,
+      qty: needed,
+      note: `Consumed to produce ${outputMaterial}`,
+      byUser: req.user.email,
+    });
+  }
+
+  const totalOutputQty = round3(ingredients.reduce((s, r) => s + r.qty, 0));
+  const recipeDetail = recipeParts.join(" + ");
+
+  const newItem = await StockItem.create({
+    tally: outputMaterial,
+    material: outputMaterial,
+    brand: outputBrand || null,
+    packing: null,
+    article: null,
+    packingDetail: `Produced from: ${recipeDetail}`,
+    totalStock: totalOutputQty,
+    batchNo: outputBatchNo || null,
+    mfg: outputMfg || null,
+    exp: outputExp || null,
+    in: totalOutputQty,
+    out: 0,
+    opening: totalOutputQty,
+    location: outputLocation,
+  });
+
+  await logTx({
+    ts: new Date().toISOString(),
+    type: "PRODUCE",
+    material: newItem.material,
+    brand: newItem.brand,
+    batchNo: newItem.batchNo,
+    location: newItem.location,
+    qty: totalOutputQty,
+    recipe: recipeDetail,
+    byUser: req.user.email,
+  });
+
+  res.status(201).json({ item: newItem });
+}
+
 export async function stockOut(req, res) {
   const item = await StockItem.findById(req.params.id);
   if (!item) return res.status(404).json({ error: "Stock row not found." });

@@ -10,6 +10,7 @@ import {
   deleteItem,
   reserveItem,
   unreserveItem,
+  produceCompound,
 } from "../controllers/ledger.controller.js";
 
 const router = Router();
@@ -20,6 +21,7 @@ router.use(authenticate);
 router.get("/", getLedger);
 router.post("/undo", editorOnly, undo);
 router.post("/in", editorOnly, stockIn);
+router.post("/produce", editorOnly, produceCompound);
 router.post("/items/:id/out", editorOnly, stockOut);
 router.post("/items/:id/transfer", editorOnly, transfer);
 router.put("/items/:id", editorOnly, editItem);
