@@ -157,8 +157,8 @@ export async function produceCompound(req, res) {
     const srcLoc = src.location;
     src.totalStock = remaining > 0 ? round3(remaining) : 0;
     src.out = (Number(src.out) || 0) + needed;
-    if (src.totalStock <= 0) src.location = null;
-    await src.save();
+    if (src.totalStock <= 0) await src.deleteOne();
+    else await src.save();
 
     recipeParts.push(`${src.material} ${needed} kg${src.brand ? ` (${src.brand})` : ""}${srcLoc ? ` from ${srcLoc}` : ""}`);
 
@@ -224,8 +224,9 @@ export async function stockOut(req, res) {
 
   item.totalStock = newTotal;
   item.out = (Number(item.out) || 0) + removeQty;
-  if (newTotal <= 0) item.location = null;
-  await item.save();
+  const emptied = newTotal <= 0;
+  if (emptied) await item.deleteOne();
+  else await item.save();
 
   await logTx({
     ts: new Date().toISOString(),
@@ -238,7 +239,7 @@ export async function stockOut(req, res) {
     byUser: req.user.email,
   });
 
-  res.json({ item });
+  res.json({ item: emptied ? null : item });
 }
 
 export async function transfer(req, res) {
@@ -289,8 +290,8 @@ export async function transfer(req, res) {
     await source.save();
   } else {
     source.totalStock = round3(available - transferQty);
-    if (source.totalStock <= 0) source.location = null;
-    await source.save();
+    if (source.totalStock <= 0) await source.deleteOne();
+    else await source.save();
 
     await StockItem.create({
       tally: material,
