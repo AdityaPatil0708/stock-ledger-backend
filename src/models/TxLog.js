@@ -4,7 +4,7 @@ const txLogSchema = new mongoose.Schema({
   ts: { type: String, required: true },
   type: {
     type: String,
-    enum: ["IN", "OUT", "TRANSFER", "EDIT", "DELETE", "RESERVE", "UNRESERVE", "PRODUCE"],
+    enum: ["IN", "OUT", "TRANSFER", "EDIT", "DELETE", "RESERVE", "UNRESERVE", "PRODUCE", "ORDER", "UNORDER"],
     required: true,
   },
   material: { type: mongoose.Schema.Types.Mixed, default: null },

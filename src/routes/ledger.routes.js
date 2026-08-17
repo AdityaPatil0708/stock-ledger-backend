@@ -11,6 +11,8 @@ import {
   reserveItem,
   unreserveItem,
   produceCompound,
+  orderItem,
+  unorderItem,
 } from "../controllers/ledger.controller.js";
 
 const router = Router();
@@ -28,5 +30,7 @@ router.put("/items/:id", editorOnly, editItem);
 router.delete("/items/:id", editorOnly, deleteItem);
 router.post("/items/:id/reserve", editorOnly, reserveItem);
 router.post("/items/:id/unreserve", editorOnly, unreserveItem);
+router.post("/items/:id/order", editorOnly, orderItem);
+router.post("/items/:id/unorder", editorOnly, unorderItem);
 
 export default router;

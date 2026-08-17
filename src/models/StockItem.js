@@ -8,6 +8,13 @@ const reservationSchema = new mongoose.Schema(
   { _id: false },
 );
 
+const inOrderSchema = new mongoose.Schema(
+  {
+    qty: { type: Number, default: 0 },
+  },
+  { _id: false },
+);
+
 const stockItemSchema = new mongoose.Schema(
   {
     tally: { type: mongoose.Schema.Types.Mixed, default: null },
@@ -25,6 +32,7 @@ const stockItemSchema = new mongoose.Schema(
     opening: { type: mongoose.Schema.Types.Mixed, default: null },
     location: { type: String, default: null },
     reservation: { type: reservationSchema, default: null },
+    inOrder: { type: inOrderSchema, default: null },
   },
   { timestamps: true },
 );

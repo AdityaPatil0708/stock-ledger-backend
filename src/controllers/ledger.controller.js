@@ -459,3 +459,53 @@ export async function unreserveItem(req, res) {
 
   res.json({ item });
 }
+
+export async function orderItem(req, res) {
+  const item = await StockItem.findById(req.params.id);
+  if (!item) return res.status(404).json({ error: "This row no longer exists." });
+
+  const qty = parseFloat(req.body?.qty);
+  if (isNaN(qty) || qty <= 0) return res.status(400).json({ error: "Enter a valid quantity to place in order." });
+
+  await pushHistory();
+  const orderedQty = round3(qty);
+  item.inOrder = { qty: orderedQty };
+  await item.save();
+
+  await logTx({
+    ts: new Date().toISOString(),
+    type: "ORDER",
+    material: item.material,
+    brand: item.brand,
+    batchNo: item.batchNo,
+    location: item.location,
+    qty: orderedQty,
+    byUser: req.user.email,
+  });
+
+  res.json({ item });
+}
+
+export async function unorderItem(req, res) {
+  const item = await StockItem.findById(req.params.id);
+  if (!item) return res.status(404).json({ error: "This row no longer exists." });
+  if (!item.inOrder) return res.json({ item });
+
+  await pushHistory();
+  const prevOrder = item.inOrder;
+  item.inOrder = null;
+  await item.save();
+
+  await logTx({
+    ts: new Date().toISOString(),
+    type: "UNORDER",
+    material: item.material,
+    brand: item.brand,
+    batchNo: item.batchNo,
+    location: item.location,
+    qty: prevOrder.qty,
+    byUser: req.user.email,
+  });
+
+  res.json({ item });
+}
